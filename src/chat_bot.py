@@ -8,7 +8,7 @@ from config import init_settings, DB_DIR
 def chat():
     init_settings()
 
-    print("지식 저장소를 불러오는 중...")
+    print("세계수와 접촉중...")
     db = chromadb.PersistentClient(path=DB_DIR)
     chroma_collection = db.get_or_create_collection("genshin_lore")
     vector_store = ChromaVectorStore(chroma_collection=chroma_collection)
@@ -25,12 +25,12 @@ def chat():
 
     # 쿼리 엔진 생성
     query_engine = index.as_query_engine(
-        similarity_top_k=20,  # [핵심] 일단 20개를 넓게 가져옵니다. (생일 문서가 여기 포함되도록)
+        similarity_top_k=10,  # [핵심] 일단 20개를 넓게 가져옵니다. (생일 문서가 여기 포함되도록)
         node_postprocessors=[reranker],  # 가져온 20개를 리랭커가 검사해서 순위를 뒤집습니다.
         system_prompt="당신은 티바트 대륙의 역사 기록관입니다. 제공된 문맥(Context)을 꼼꼼히 확인하여 사실에 기반해 답변하세요."
     )
 
-    print("=== 원신 AI 기록관 (With Reranker) ===")
+    print("=== 세계수와 접촉 완료 ===")
     while True:
         user_input = input("\n질문: ")
         if user_input.lower() in ["q", "exit"]:
