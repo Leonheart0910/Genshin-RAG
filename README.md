@@ -11,7 +11,7 @@
 ## 🛠 기술 스택
 
 - **Framework**: LlamaIndex
-- **LLM**: Upstage Solar (solar-pro), Google Gemini 1.5/2.0, Groq (Llama 3.1/3.3)
+- **LLM**: Upstage Solar (solar-pro), Google Gemini 2.5 flash, Groq (Llama 3.1/3.3)
 - **Embedding**: Google Gemini (text-embedding-004)
 - **Vector Database**: ChromaDB
 - **Language**: Python 3.10+
@@ -61,3 +61,4 @@ python src/build_db.py
 ```bash
 python src/chat_bot.py
 ```
+
