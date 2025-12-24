@@ -20,7 +20,7 @@ def init_settings():
         raise ValueError(".env 파일에 GOOGLE_API_KEY가 없습니다.")
 
     Settings.llm = Gemini(
-        model_name="models/gemini-2.0-flash-lite",
+        model_name="models/gemini-2.5-flash",
         temperature=0.1
     )
     Settings.embed_model = GeminiEmbedding(

@@ -22,18 +22,25 @@ def chat():
 
     # 쿼리 엔진 생성
     query_engine = index.as_query_engine(
-        similarity_top_k=3,
+        similarity_top_k=10,
         system_prompt="당신은 티바트 대륙의 역사 기록관 입니다. 사실에 기반하여 답변하세요."
     )
 
     print("=== 티바트 세계수 (종료: q) ===")
     while True:
-        user_input = input("\n여행자 : ")
-        if user_input.lower() == "q":
+        user_input = input("\n질문: ")
+        if user_input.lower() in ["q", "exit"]:
             break
 
         response = query_engine.query(user_input)
-        print(f"세계수 : {response}")
+        print(f"\n답변: {response}\n")
+
+        # [디버깅 추가] AI가 참고한 문서 보여주기
+        print("=" * 20 + " [참고한 문서들] " + "=" * 20)
+        for node in response.source_nodes:
+            # 검색 점수와 내용을 조금 보여줌
+            print(f"[점수: {node.score:.4f}] {node.node.get_content()[:50]}...")
+        print("=" * 60)
 
 
 if __name__ == "__main__":

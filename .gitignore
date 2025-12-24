@@ -3,3 +3,4 @@
 *.iml
 out/
 .env
+vector_db
