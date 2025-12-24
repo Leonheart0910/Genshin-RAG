@@ -7,7 +7,7 @@
       "name": "종려",
       "region": "리월",
       "identity": "바위 신",
-      "alias": ["모락스", "암왕제군"]
+      "alias": "모락스, 암왕제군"
     }
   },
   {
@@ -15,8 +15,8 @@
     "metadata": {
       "category": "전투",
       "subcategory": "원소 폭발",
-      "name": "천성",
-      "user": "종려",
+      "name": "종려",
+      "skill_name": "천성",
       "effect": "석화"
     }
   },
@@ -25,9 +25,9 @@
     "metadata": {
       "category": "전투",
       "subcategory": "원소 전투 스킬",
-      "name": "지핵",
-      "user": "종려",
-      "mechanic": ["암주", "옥홀 방패", "내성 감소"]
+      "name": "종려",
+      "skill_name": "지핵",
+      "mechanic": "암주, 옥홀 방패, 내성 감소"
     }
   },
   {
@@ -35,7 +35,8 @@
     "metadata": {
       "category": "전투",
       "subcategory": "운명의 자리",
-      "name": "금옥, 선물",
+      "name": "종려",
+      "constellation_name": "금옥, 선물",
       "constellation_level": 6,
       "effect": "HP 회복"
     }
@@ -45,6 +46,7 @@
     "metadata": {
       "category": "성격",
       "subcategory": "경제 관념",
+      "name": "종려",
       "keyword": "빈털터리",
       "irony": "모라의 창조자"
     }
@@ -55,7 +57,7 @@
       "category": "장비",
       "subcategory": "무기",
       "name": "관홍의 창",
-      "type": "장병기",
+      "user_name": "종려",
       "lore_relation": "오셀 봉인"
     }
   },
@@ -64,7 +66,7 @@
     "metadata": {
       "category": "인물 관계",
       "subcategory": "과거",
-      "target": "귀종",
+      "name": "귀종",
       "relationship": "벗/동맹",
       "status": "사망"
     }
@@ -74,7 +76,7 @@
     "metadata": {
       "category": "인물 관계",
       "subcategory": "적대/우호",
-      "target": "야타용왕",
+      "name": "야타용왕",
       "keyword": "마모",
       "event": "봉인"
     }
@@ -84,7 +86,7 @@
     "metadata": {
       "category": "인물 관계",
       "subcategory": "직장",
-      "target": "호두",
+      "name": "호두",
       "role": "고용주",
       "workplace": "왕생당"
     }
@@ -94,7 +96,7 @@
     "metadata": {
       "category": "인물 관계",
       "subcategory": "선인",
-      "target": "소",
+      "name": "소",
       "role": "수호자",
       "relationship": "주종 관계"
     }
@@ -104,7 +106,7 @@
     "metadata": {
       "category": "인물 관계",
       "subcategory": "우인단",
-      "target": "타르탈리아",
+      "name": "타르탈리아",
       "dynamic": "금전적 지원"
     }
   },
@@ -133,7 +135,7 @@
     "metadata": {
       "category": "대사",
       "subcategory": "대기 모션",
-      "content": "계화꽃",
+      "name": "종려",
       "theme": "고독/그리움"
     }
   },
@@ -142,6 +144,7 @@
     "metadata": {
       "category": "설정",
       "subcategory": "문화",
+      "name": "청신례",
       "event": "청신례",
       "form": "반린반룡"
     }
@@ -151,9 +154,9 @@
     "metadata": {
       "category": "전투",
       "subcategory": "패시브",
-      "name": "낭떠러지의 재앙",
-      "effect": "내성 깎기",
-      "value": "20%"
+      "name": "종려",
+      "skill_name": "낭떠러지의 재앙",
+      "effect": "내성 깎기"
     }
   },
   {
@@ -161,9 +164,8 @@
     "metadata": {
       "category": "인물 관계",
       "subcategory": "신",
-      "target": "벤티",
-      "group": "초대 집정관",
-      "status": "생존"
+      "name": "벤티",
+      "group": "초대 집정관"
     }
   },
   {
@@ -171,8 +173,8 @@
     "metadata": {
       "category": "프로필",
       "subcategory": "이명",
-      "title": "무신",
-      "era": "마신 전쟁"
+      "name": "종려",
+      "title": "무신"
     }
   },
   {
@@ -180,9 +182,9 @@
     "metadata": {
       "category": "취향",
       "subcategory": "음식",
+      "name": "종려",
       "like": "죽순 스프",
-      "dislike": "해산물",
-      "reason": "전쟁 트라우마"
+      "dislike": "해산물"
     }
   },
   {
@@ -190,8 +192,8 @@
     "metadata": {
       "category": "설정",
       "subcategory": "별자리",
-      "name_kr": "암왕제군자리",
-      "name_latin": "Lapis Dei"
+      "name": "종려",
+      "name_kr": "암왕제군자리"
     }
   },
   {
@@ -199,9 +201,9 @@
     "metadata": {
       "category": "스토리",
       "subcategory": "전설 임무",
+      "name": "종려",
       "title": "소금꽃",
-      "act": 1,
-      "theme": "역사의 기록"
+      "act": 1
     }
   },
   {
@@ -209,9 +211,9 @@
     "metadata": {
       "category": "스토리",
       "subcategory": "전설 임무",
+      "name": "야타용왕",
       "title": "굳은 심지",
-      "act": 2,
-      "boss": "야타용왕"
+      "act": 2
     }
   },
   {
@@ -219,9 +221,8 @@
     "metadata": {
       "category": "생활",
       "subcategory": "특성",
-      "name": "수정석의 울림",
-      "effect": "재료 반환",
-      "type": "단조"
+      "name": "종려",
+      "skill_name": "수정석의 울림"
     }
   },
   {
@@ -238,8 +239,8 @@
     "metadata": {
       "category": "스토리",
       "subcategory": "메인 퀘스트",
-      "event": "신의 심장 양도",
-      "motive": "인간의 자립"
+      "name": "종려",
+      "event": "신의 심장 양도"
     }
   },
   {
@@ -247,7 +248,7 @@
     "metadata": {
       "category": "인물 관계",
       "subcategory": "신",
-      "target": "라이덴 쇼군",
+      "name": "라이덴 쇼군",
       "theme": "영원"
     }
   },
@@ -256,7 +257,7 @@
     "metadata": {
       "category": "인물 관계",
       "subcategory": "신",
-      "target": "나히다",
+      "name": "나히다",
       "theme": "지혜"
     }
   },
@@ -265,7 +266,7 @@
     "metadata": {
       "category": "인물 관계",
       "subcategory": "리월 주민",
-      "target": "향릉",
+      "name": "향릉",
       "location": "만민당"
     }
   },
@@ -274,8 +275,8 @@
     "metadata": {
       "category": "대사",
       "subcategory": "스킬 시전",
-      "line": "하늘은 만물을 움직인다",
-      "english": "I will have order"
+      "name": "종려",
+      "line": "하늘은 만물을 움직인다"
     }
   },
   {
@@ -283,9 +284,8 @@
     "metadata": {
       "category": "장비",
       "subcategory": "추천 무기",
-      "name": "흑술창",
-      "rarity": 3,
-      "reason": "HP 계수 효율"
+      "name": "종려",
+      "item_name": "흑술창"
     }
   },
   {
@@ -293,8 +293,8 @@
     "metadata": {
       "category": "취향",
       "subcategory": "기호품",
-      "item": "차",
-      "trait": "전문가"
+      "name": "종려",
+      "item": "차"
     }
   },
   {
@@ -302,7 +302,7 @@
     "metadata": {
       "category": "인물 관계",
       "subcategory": "선인",
-      "target": "감우",
+      "name": "감우",
       "relationship": "계약자"
     }
   },
@@ -311,8 +311,8 @@
     "metadata": {
       "category": "외형",
       "subcategory": "코스튬",
-      "concept": "신장",
-      "status": "미출시"
+      "name": "종려",
+      "concept": "신장"
     }
   },
   {
@@ -320,7 +320,7 @@
     "metadata": {
       "category": "인물 관계",
       "subcategory": "리월 주민",
-      "target": "연비",
+      "name": "연비",
       "topic": "법률/계약"
     }
   },
@@ -329,9 +329,8 @@
     "metadata": {
       "category": "전투",
       "subcategory": "패시브",
-      "name": "호의호식",
-      "effect": "피해량 증가",
-      "scaling": "HP"
+      "name": "종려",
+      "skill_name": "호의호식"
     }
   },
   {
@@ -339,8 +338,8 @@
     "metadata": {
       "category": "전투",
       "subcategory": "원소 공명",
-      "type": "부동의 바위",
-      "effect": "피해 증가/내성 감소"
+      "name": "종려",
+      "type": "부동의 바위"
     }
   },
   {
@@ -348,8 +347,8 @@
     "metadata": {
       "category": "프로필",
       "subcategory": "생일",
-      "date": "12월 31일",
-      "significance": "연말"
+      "name": "종려",
+      "date": "12월 31일"
     }
   },
   {
@@ -357,7 +356,7 @@
     "metadata": {
       "category": "인물 관계",
       "subcategory": "주인공",
-      "target": "여행자",
+      "name": "여행자",
       "role": "증인/기록자"
     }
   },
@@ -366,8 +365,8 @@
     "metadata": {
       "category": "역사",
       "subcategory": "지리",
-      "location": "천형산",
-      "purpose": "방어선"
+      "name": "종려",
+      "location": "천형산"
     }
   },
   {
@@ -375,8 +374,8 @@
     "metadata": {
       "category": "능력",
       "subcategory": "비전투",
-      "skill": "감정",
-      "target": "골동품"
+      "name": "종려",
+      "skill": "감정"
     }
   }
 ]

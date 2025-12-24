@@ -8,7 +8,6 @@ from config import init_settings, DATA_DIR, DB_DIR
 
 def load_json_data():
     documents = []
-    # source 폴더 내의 모든 json 파일을 읽음
     if not os.path.exists(DATA_DIR):
         print(f"경로가 없습니다: {DATA_DIR}")
         return []
@@ -19,24 +18,18 @@ def load_json_data():
             try:
                 with open(filepath, "r", encoding="utf-8") as f:
                     data = json.load(f)
-
-                    # 데이터가 리스트가 아니라 딕셔너리 하나인 경우 리스트로 감싸기
                     if isinstance(data, dict):
                         data = [data]
 
                     for item in data:
-                        # [핵심 수정] 메타데이터 전처리: 리스트([])가 있으면 문자열로 변환
-                        # 예: ["리월", "캐릭터"] -> "리월, 캐릭터"
                         meta = item.get("metadata", {})
                         clean_metadata = {}
-
                         for key, value in meta.items():
                             if isinstance(value, list):
                                 clean_metadata[key] = ", ".join(str(v) for v in value)
                             else:
                                 clean_metadata[key] = value
 
-                        # 텍스트와 전처리된 메타데이터로 Document 생성
                         doc = Document(
                             text=item.get("text", ""),
                             metadata=clean_metadata
@@ -44,7 +37,6 @@ def load_json_data():
                         documents.append(doc)
             except Exception as e:
                 print(f"파일 로드 중 에러 발생 ({filename}): {e}")
-
     return documents
 
 
@@ -55,25 +47,35 @@ def build():
         documents = load_json_data()
 
         if not documents:
-            print("로딩된 데이터가 없습니다. data/source 폴더에 JSON 파일이 있는지 확인해주세요.")
+            print("로딩된 데이터가 없습니다.")
             return
 
         print(f"총 {len(documents)}개의 데이터 청크를 찾았습니다.")
 
-        # ChromaDB 연결 (영구 저장소)
+        # ChromaDB 연결
         db = chromadb.PersistentClient(path=DB_DIR)
-        chroma_collection = db.get_or_create_collection("genshin_lore")
+
+        # [핵심 수정] 기존 컬렉션이 있다면 삭제하여 초기화 (Overwrite 로직)
+        collection_name = "genshin_lore"
+        try:
+            db.delete_collection(collection_name)
+            print(f"기존 '{collection_name}' 컬렉션을 초기화했습니다.")
+        except ValueError:
+            # 컬렉션이 없어서 삭제에 실패한 경우 무시
+            print(f"새로운 '{collection_name}' 컬렉션을 생성합니다.")
+
+        chroma_collection = db.create_collection(collection_name)
         vector_store = ChromaVectorStore(chroma_collection=chroma_collection)
         storage_context = StorageContext.from_defaults(vector_store=vector_store)
 
-        print("임베딩 및 인덱싱 시작...")
+        print("임베딩 및 인덱싱 시작 (데이터를 새로 굽는 중)...")
         VectorStoreIndex.from_documents(
             documents, storage_context=storage_context
         )
-        print("지맥 구축완료! data/vector_db 폴더에 저장되었습니다.")
+        print("재구축 완료 중복 없이 최신 데이터만 존재합니다.")
 
     except Exception as e:
-        print(f"\n 치명적인 오류 :\n{e}")
+        print(f"\n오류 발생: {e}")
 
 
 if __name__ == "__main__":
